@@ -86,6 +86,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
+    
     const response = await fetch('https://chavesdevopenai.onrender.com', {
         method: 'POST',
         headers: {
@@ -94,7 +95,7 @@ const handleSubmit = async (e) => {
         body: JSON.stringify({
             prompt: data.get('prompt')
         })
-    })
+    })//comentario
 
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
