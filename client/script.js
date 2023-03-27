@@ -51,8 +51,8 @@ function chatStripe(isAi, value, uniqueId) {
             <div class="chat">
                 <div class="profile">
                     <img 
-                      src=${isAi ? bot : user} 
-                      alt="${isAi ? 'bot' : 'user'}" 
+                        src=${isAi ? bot : user} 
+                        alt="${isAi ? 'bot' : 'user'}" 
                     />
                 </div>
                 <div class="message" id=${uniqueId}>${value}</div>
@@ -86,8 +86,8 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    
-    const response = await fetch("https://chavesdevopenai.onrender.com", {
+
+    const response = await fetch("http://localhost:5000", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const handleSubmit = async (e) => {
     })//comentario
 
     clearInterval(loadInterval)
-    messageDiv.innerHTML = " "
+    messageDiv.innerHTML = " ";
 
     if (response.ok) {
         const data = await response.json();
