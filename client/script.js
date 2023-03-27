@@ -110,6 +110,7 @@ const handleSubmit = async (e) => {
 
         messageDiv.innerHTML = "Something went wrong"
         alert(err)
+        console.log(err);
     }
 }
 
@@ -117,7 +118,5 @@ form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         handleSubmit(e)
-    } else {
-        console.log(err);
     }
 })
